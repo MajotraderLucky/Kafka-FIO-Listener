@@ -1,5 +1,12 @@
 version: '2'
 services:
+  db:
+    build: ./postgrdb
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     ports:
@@ -7,6 +14,8 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+    depends_on:
+      - db
 
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -23,3 +32,8 @@ services:
     build: .
     environment:
       KAFKA_HOST: kafka
+    depends_on:
+      - kafka
+
+networks:
+  mynetwork:
