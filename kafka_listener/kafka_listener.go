@@ -11,8 +11,6 @@ func handleMessage(msg *kafka.Message) {
 }
 
 func main() {
-	fmt.Println("Hello World!")
-
 	// Creating a Kafka consumer instance
 	consumer, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "kafka:9092",
