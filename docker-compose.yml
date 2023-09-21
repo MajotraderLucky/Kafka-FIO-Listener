@@ -25,6 +25,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_HOME: /opt/kafka
     depends_on:
       - zookeeper
 
@@ -33,6 +34,13 @@ services:
     environment:
       KAFKA_HOST: kafka
     depends_on:
+      - kafka
+
+  create_topic:
+    build:
+      context: .
+      dockerfile: Dockerfile.create-topic
+    depends_on: 
       - kafka
 
 networks:
