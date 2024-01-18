@@ -16,8 +16,12 @@ COPY . .
 # Build the Go app
 RUN go build -o main .
 
+# Make the 'main' file executable
+RUN chmod +x main
+
+RUN ls -la /app
+
 # This container exposes port 8080 to the outside world
 EXPOSE 8000
 
-# Run the binary program produced by go install
-CMD ["./main"]
+CMD sh -c "go run main.go"
