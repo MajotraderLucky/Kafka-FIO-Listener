@@ -46,6 +46,14 @@ func main() {
 		log.Println("Database exists")
 	}
 
+	// Check if the table exists
+	_, err = db.Exec("SELECT 1 FROM fio_data LIMIT 1")
+	if err != nil {
+		log.Fatal("Table does not exist: ", err)
+	} else {
+		log.Println("Table exists")
+	}
+
 	// Close the database connection
 	defer db.Close()
 }
