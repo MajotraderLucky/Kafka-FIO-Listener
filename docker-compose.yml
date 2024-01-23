@@ -51,6 +51,8 @@ services:
     depends_on:
       - kafka
       - db
+    networks:
+      - mynetwork
 
 networks:
   mynetwork:

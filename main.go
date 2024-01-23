@@ -5,6 +5,10 @@ import (
 	"log"
 	"time"
 
+	"database/sql"
+
+	_ "github.com/lib/pq"
+
 	"github.com/MajotraderLucky/Utils/logger"
 )
 
@@ -27,4 +31,21 @@ func main() {
 	logger.LogLine()
 
 	log.Println("Hello, logger!")
+
+	// Connect to the database
+	db, err := sql.Open("postgres", "host=db port=5432 user=postgres password=mysecretpassword dbname=mydatabase sslmode=disable")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Check if the database exists
+	_, err = db.Exec("SELECT 1")
+	if err != nil {
+		log.Fatal("Database does not exist: ", err)
+	} else {
+		log.Println("Database exists")
+	}
+
+	// Close the database connection
+	defer db.Close()
 }
