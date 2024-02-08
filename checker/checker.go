@@ -2,10 +2,12 @@ package checker
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"log"
 	"time"
 
+	"github.com/IBM/sarama"
 	zk "github.com/go-zookeeper/zk"
 )
 
@@ -91,6 +93,52 @@ func CheckZookeeper() error {
 	case <-time.After(time.Second * 10):
 		log.Println("timeout while waiting for an event")
 		return fmt.Errorf("timeout while waiting for an event")
+	}
+
+	return nil
+}
+
+func CheckKafka() error {
+	// Setup configuration
+	config := sarama.NewConfig()
+	config.Net.DialTimeout = 10 * time.Second
+
+	// Create a new client using the given broker addresses and configuration
+	client, err := sarama.NewClient([]string{"kafka:9092"}, config)
+	if err != nil {
+		log.Println("Failed to connect to Kafka:", err)
+		return fmt.Errorf("failed to connect to Kafka: %s", err)
+	}
+	defer func() {
+		if err := client.Close(); err != nil {
+			log.Fatalln(err)
+		}
+	}()
+
+	// Check broker info
+	brokers := client.Brokers()
+	if len(brokers) == 0 {
+		log.Println("No brokers available")
+		return errors.New("no brokers available")
+	}
+
+	// Try to connect to the first broker
+	broker := brokers[0]
+	err = broker.Open(config)
+	if err != nil {
+		log.Println("Failed to connect to broker:", err)
+		return fmt.Errorf("failed to connect to broker: %s", err)
+	}
+
+	// Check if connected
+	connected, err := broker.Connected()
+	if err != nil {
+		log.Println("Failed to check broker connection:", err)
+		return fmt.Errorf("failed to check broker connection: %s", err)
+	}
+	if !connected {
+		log.Println("Not connected to broker")
+		return errors.New("not connected to broker")
 	}
 
 	return nil

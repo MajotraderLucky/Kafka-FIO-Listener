@@ -30,6 +30,8 @@ services:
       KAFKA_HOME: /opt/kafka
     depends_on:
       - zookeeper
+    networks:
+      - mynetwork
 
   app:
     build: kafka_listener/

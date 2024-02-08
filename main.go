@@ -43,5 +43,12 @@ func main() {
 	}
 	log.Println("Zookeeper is working correctly")
 
+	// Check Kafka service
+	err = checker.CheckKafka()
+	if err != nil {
+		log.Fatalf("Error checking Kafka: %s", err)
+	}
+	log.Println("Kafka is working correctly")
+
 	logger.CleanLogCountLines(50)
 }
