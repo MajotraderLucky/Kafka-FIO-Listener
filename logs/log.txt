@@ -1,50 +1,50 @@
-2024/02/03 04:58:53 send loop terminated: <nil>
-2024/02/03 04:58:53 Zookeeper is working correctly
+2024/02/09 14:48:35 Kafka is working correctly
+2024/02/09 14:48:35 Сообщение 'Привет' отправлено в топик 'my-topic'
+2024/02/09 14:48:35 Сообщение 'из' отправлено в топик 'my-topic'
+2024/02/09 14:48:35 Сообщение 'Kafka' отправлено в топик 'my-topic'
 
-2024/02/08 14:38:36 -------------------------------------------------------
-2024/02/08 14:38:36 Hello, logger!
-2024/02/08 14:38:36 база данных существует
-2024/02/08 14:38:36 таблица существует
-2024/02/08 14:38:36 connected to 172.18.0.3:2181
-2024/02/08 14:38:36 authenticated: id=72057609128378368, timeout=10000
-2024/02/08 14:38:36 re-submitting `0` credentials after reconnect
-2024/02/08 14:38:36 recv loop terminated: EOF
-2024/02/08 14:38:36 Zookeeper is working correctly
-2024/02/08 14:38:36 send loop terminated: <nil>
+2024/02/09 14:57:37 -------------------------------------------------------
+2024/02/09 14:57:37 Hello, logger!
+2024/02/09 14:57:37 база данных существует
+2024/02/09 14:57:37 таблица существует
+2024/02/09 14:57:37 connected to 172.19.0.3:2181
+2024/02/09 14:57:37 authenticated: id=72059595362861058, timeout=10000
+2024/02/09 14:57:37 re-submitting `0` credentials after reconnect
+2024/02/09 14:57:37 recv loop terminated: EOF
+2024/02/09 14:57:37 send loop terminated: <nil>
+2024/02/09 14:57:37 Zookeeper is working correctly
+2024/02/09 14:57:37 Kafka is working correctly
+2024/02/09 14:57:37 Сообщение 'Привет' отправлено в топик 'my-topic'
+2024/02/09 14:57:37 Сообщение 'из' отправлено в топик 'my-topic'
+2024/02/09 14:57:37 Сообщение 'Kafka' отправлено в топик 'my-topic'
 
-2024/02/08 15:15:38 -------------------------------------------------------
-2024/02/08 15:15:38 Hello, logger!
-2024/02/08 15:15:38 база данных существует
-2024/02/08 15:15:38 таблица существует
-2024/02/08 15:15:38 connected to 172.20.0.3:2181
-2024/02/08 15:15:38 authenticated: id=72057754743734272, timeout=10000
-2024/02/08 15:15:38 re-submitting `0` credentials after reconnect
-2024/02/08 15:15:38 recv loop terminated: EOF
-2024/02/08 15:15:38 send loop terminated: <nil>
-2024/02/08 15:15:38 Zookeeper is working correctly
-2024/02/08 15:15:39 Failed to connect to Kafka: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka on 127.0.0.11:53: server misbehaving
-2024/02/08 15:15:39 Error checking Kafka: failed to connect to Kafka: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka on 127.0.0.11:53: server misbehaving
-2024/02/08 15:18:13 -------------------------------------------------------
-2024/02/08 15:18:13 Hello, logger!
-2024/02/08 15:18:13 база данных существует
-2024/02/08 15:18:13 таблица существует
-2024/02/08 15:18:13 connected to 172.22.0.3:2181
-2024/02/08 15:18:13 authenticated: id=72057764840538114, timeout=10000
-2024/02/08 15:18:13 re-submitting `0` credentials after reconnect
-2024/02/08 15:18:13 recv loop terminated: EOF
-2024/02/08 15:18:13 Zookeeper is working correctly
-2024/02/08 15:18:13 send loop terminated: <nil>
-2024/02/08 15:18:13 Kafka is working correctly
+2024/02/09 15:04:33 -------------------------------------------------------
+2024/02/09 15:04:33 Hello, logger!
+2024/02/09 15:04:33 база данных существует
+2024/02/09 15:04:33 таблица существует
+2024/02/09 15:04:33 connected to 172.20.0.3:2181
+2024/02/09 15:04:33 authenticated: id=72059622675972098, timeout=10000
+2024/02/09 15:04:33 re-submitting `0` credentials after reconnect
+2024/02/09 15:04:33 recv loop terminated: EOF
+2024/02/09 15:04:33 send loop terminated: <nil>
+2024/02/09 15:04:33 Zookeeper is working correctly
+2024/02/09 15:04:33 Kafka is working correctly
+2024/02/09 15:04:33 Message 'Hello' sent to topic 'my-topic'
+2024/02/09 15:04:33 Message 'from' sent to topic 'my-topic'
+2024/02/09 15:04:33 Message 'Kafka' sent to topic 'my-topic'
 
-2024/02/08 15:26:48 -------------------------------------------------------
-2024/02/08 15:26:48 Hello, logger!
-2024/02/08 15:26:48 база данных существует
-2024/02/08 15:26:48 таблица существует
-2024/02/08 15:26:48 connected to 172.24.0.3:2181
-2024/02/08 15:26:48 authenticated: id=72057798624542722, timeout=10000
-2024/02/08 15:26:48 re-submitting `0` credentials after reconnect
-2024/02/08 15:26:48 recv loop terminated: EOF
-2024/02/08 15:26:48 Zookeeper is working correctly
-2024/02/08 15:26:48 send loop terminated: <nil>
-2024/02/08 15:26:48 Kafka is working correctly
+2024/02/09 15:08:07 -------------------------------------------------------
+2024/02/09 15:08:07 Hello, logger!
+2024/02/09 15:08:07 база данных существует
+2024/02/09 15:08:07 таблица существует
+2024/02/09 15:08:07 connected to 172.21.0.3:2181
+2024/02/09 15:08:07 authenticated: id=72059636657356802, timeout=10000
+2024/02/09 15:08:07 re-submitting `0` credentials after reconnect
+2024/02/09 15:08:07 recv loop terminated: EOF
+2024/02/09 15:08:07 Zookeeper is working correctly
+2024/02/09 15:08:07 send loop terminated: <nil>
+2024/02/09 15:08:07 Kafka is working correctly
+2024/02/09 15:08:07 Message 'Hello' sent to topic 'my-topic'
+2024/02/09 15:08:07 Message 'from' sent to topic 'my-topic'
+2024/02/09 15:08:07 Message 'Kafka' sent to topic 'my-topic'
 

@@ -39,6 +39,8 @@ services:
       KAFKA_HOST: kafka
     depends_on:
       - kafka
+    networks:
+      - mynetwork
 
   create_topic:
     build:
@@ -46,6 +48,8 @@ services:
       dockerfile: Dockerfile.create-topic
     depends_on: 
       - kafka
+    networks:
+      - mynetwork
 
   mainapp:
     build: .

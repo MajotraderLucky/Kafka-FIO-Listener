@@ -50,5 +50,7 @@ func main() {
 	}
 	log.Println("Kafka is working correctly")
 
+	checker.CheckApp()
+
 	logger.CleanLogCountLines(50)
 }

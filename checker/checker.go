@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/IBM/sarama"
+	"github.com/confluentinc/confluent-kafka-go/kafka"
 	zk "github.com/go-zookeeper/zk"
 )
 
@@ -142,4 +143,32 @@ func CheckKafka() error {
 	}
 
 	return nil
+}
+
+// CheckApp checks the application's functionality by publishing
+// messages to the Kafka topic and verifying that the application
+// receives them.
+func CheckApp() {
+	producer, err := kafka.NewProducer(&kafka.ConfigMap{"bootstrap.servers": "localhost"})
+	if err != nil {
+		log.Panicln(err)
+	}
+	defer producer.Close()
+
+	topic := "my-topic"
+	for _, word := range []string{"Hello", "from", "Kafka"} {
+		producer.Produce(&kafka.Message{
+			TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
+			Value:          []byte(word),
+		}, nil)
+		log.Printf("Message '%s' sent to topic '%s'\n", word, topic)
+	}
+
+	// Waiting to give the application time to process the messages
+	time.Sleep(2 * time.Second)
+
+	// Here you can add logic to check if your application is correctly processing the messages.
+	// For example, if your application writes messages to a database, you can check if the messages appeared in the database.
+	// log.Println("Messages successfully processed by the application")
+
 }
