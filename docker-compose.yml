@@ -33,12 +33,12 @@ services:
     networks:
       - mynetwork
 
-  create_topic:
-    build:
-      context: .
-      dockerfile: Dockerfile.create-topic
+  create_topic: 
+    build: ./create_topic
     depends_on: 
       - kafka
+      - db
+    restart: on-failure
     networks:
       - mynetwork
 
