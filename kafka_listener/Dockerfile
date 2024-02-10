@@ -22,4 +22,5 @@ RUN go build -o kafka_listener .
 EXPOSE 8080
 
 # Run the binary program produced by go install
-CMD ["./kafka_listener"]
+#CMD ["./kafka_listener"]
+CMD sh -c "go run kafka_listener/kafka_listener.go"

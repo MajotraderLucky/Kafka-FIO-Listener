@@ -26,8 +26,6 @@ func main() {
 	logger.SetLogger()
 	logger.LogLine()
 
-	log.Println("Hello, logger!")
-
 	// Connect to the database and check it
 	db, err := checker.ConnectAndCheckDB()
 	if err != nil {

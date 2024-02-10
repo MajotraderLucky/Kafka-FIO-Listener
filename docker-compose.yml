@@ -33,21 +33,26 @@ services:
     networks:
       - mynetwork
 
-  app:
-    build: kafka_listener/
-    environment:
-      KAFKA_HOST: kafka
-    depends_on:
-      - kafka
-    networks:
-      - mynetwork
-
   create_topic:
     build:
       context: .
       dockerfile: Dockerfile.create-topic
     depends_on: 
       - kafka
+    networks:
+      - mynetwork
+
+  app:
+    build: kafka_listener/
+    environment:
+      KAFKA_HOST: kafka
+    depends_on:
+      - kafka
+      - db
+      - create_topic
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
     networks:
       - mynetwork
 
