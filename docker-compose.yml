@@ -33,26 +33,25 @@ services:
     networks:
       - mynetwork
 
-  create_topic: 
-    build: ./create_topic
-    depends_on: 
-      - kafka
-      - db
-    restart: on-failure
-    networks:
-      - mynetwork
-
   app:
-    build: kafka_listener/
+    build: ./kafka_listener
     environment:
       KAFKA_HOST: kafka
     depends_on:
       - kafka
       - db
-      - create_topic
     volumes:
       - .:/app
       - ./logs:/app/logs
+    networks:
+      - mynetwork
+
+  create-topics:
+    build:
+      context: ./create_topics
+      dockerfile: Dockerfile
+    depends_on:
+      - kafka
     networks:
       - mynetwork
 
@@ -67,7 +66,7 @@ services:
     networks:
       - mynetwork
     environment:
-      - TZ=Europe/Moscow
+      TZ: Europe/Moscow
 
 networks:
-  mynetwork:
+  mynetwork: {}

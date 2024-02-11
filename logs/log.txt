@@ -1,50 +1,50 @@
-2024/02/10 14:35:28 re-submitting `0` credentials after reconnect
-2024/02/10 14:35:28 recv loop terminated: EOF
-2024/02/10 14:35:28 Zookeeper is working correctly
-2024/02/10 14:35:28 send loop terminated: <nil>
-2024/02/10 14:35:28 Kafka is working correctly
-2024/02/10 14:35:28 Message 'Hello' sent to topic 'my-topic'
-2024/02/10 14:35:28 Message 'from' sent to topic 'my-topic'
-2024/02/10 14:35:28 Message 'Kafka' sent to topic 'my-topic'
-2024/02/10 11:35:28 Kafka listener is Starting...
-2024/02/10 11:35:29 -------------------------------------------------------
-2024/02/10 11:35:30 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
+2024/02/11 19:21:37 send loop terminated: <nil>
+2024/02/11 19:21:37 Zookeeper is working correctly
+2024/02/11 19:21:37 Kafka is working correctly
+2024/02/11 19:21:37 Message 'Hello' sent to topic 'my-topic'
+2024/02/11 19:21:37 Message 'from' sent to topic 'my-topic'
+2024/02/11 19:21:37 Message 'Kafka' sent to topic 'my-topic'
+2024/02/11 16:21:37 -------------------------------------------------------
+2024/02/11 16:21:37 Kafka listener is Starting...
+2024/02/11 16:21:37 -------------------------------------------------------
+2024/02/11 16:21:37 Successfully connected to Kafka from Kafka listener service
+2024/02/11 16:21:38 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
 
-2024/02/10 14:47:14 -------------------------------------------------------
-2024/02/10 14:47:14 база данных существует
-2024/02/10 14:47:14 таблица существует
-2024/02/10 14:47:14 connected to 172.25.0.3:2181
-2024/02/10 14:47:14 authenticated: id=72058891609899010, timeout=10000
-2024/02/10 14:47:14 re-submitting `0` credentials after reconnect
-2024/02/10 14:47:14 recv loop terminated: EOF
-2024/02/10 14:47:14 Zookeeper is working correctly
-2024/02/10 14:47:14 send loop terminated: <nil>
-2024/02/10 14:47:14 Kafka is working correctly
-2024/02/10 14:47:14 Message 'Hello' sent to topic 'my-topic'
-2024/02/10 14:47:14 Message 'from' sent to topic 'my-topic'
-2024/02/10 14:47:14 Message 'Kafka' sent to topic 'my-topic'
-2024/02/10 11:47:14 -------------------------------------------------------
-2024/02/10 11:47:14 Kafka listener is Starting...
-2024/02/10 11:47:14 -------------------------------------------------------
-2024/02/10 11:47:14 Successfully connected to Kafka from Kafka listener service
+2024/02/11 17:02:04 -------------------------------------------------------
+2024/02/11 17:02:04 Kafka listener is Starting...
+2024/02/11 17:02:04 -------------------------------------------------------
+2024/02/11 17:02:04 Successfully connected to Kafka from Kafka listener service
+2024/02/11 20:02:04 -------------------------------------------------------
+2024/02/11 20:02:04 база данных существует
+2024/02/11 20:02:04 таблица существует
+2024/02/11 20:02:04 connected to 172.30.0.3:2181
+2024/02/11 20:02:04 authenticated: id=72059968536248322, timeout=10000
+2024/02/11 20:02:04 re-submitting `0` credentials after reconnect
+2024/02/11 20:02:04 recv loop terminated: EOF
+2024/02/11 20:02:04 Zookeeper is working correctly
+2024/02/11 20:02:04 send loop terminated: <nil>
+2024/02/11 20:02:04 Kafka is working correctly
+2024/02/11 20:02:04 Message 'Hello' sent to topic 'my-topic'
+2024/02/11 20:02:04 Message 'from' sent to topic 'my-topic'
+2024/02/11 20:02:04 Message 'Kafka' sent to topic 'my-topic'
+2024/02/11 17:02:05 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
 
-2024/02/10 11:47:18 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
-2024/02/10 18:02:39 -------------------------------------------------------
-2024/02/10 18:02:39 база данных существует
-2024/02/10 18:02:39 таблица существует
-2024/02/10 18:02:39 connected to 172.26.0.3:2181
-2024/02/10 18:02:39 authenticated: id=72059567500951554, timeout=10000
-2024/02/10 18:02:39 re-submitting `0` credentials after reconnect
-2024/02/10 18:02:39 recv loop terminated: EOF
-2024/02/10 18:02:39 send loop terminated: <nil>
-2024/02/10 18:02:39 Zookeeper is working correctly
-2024/02/10 18:02:39 Kafka is working correctly
-2024/02/10 18:02:39 Message 'Hello' sent to topic 'my-topic'
-2024/02/10 18:02:39 Message 'from' sent to topic 'my-topic'
-2024/02/10 18:02:39 Message 'Kafka' sent to topic 'my-topic'
-2024/02/10 15:02:40 -------------------------------------------------------
-2024/02/10 15:02:40 Kafka listener is Starting...
-2024/02/10 15:02:40 -------------------------------------------------------
-2024/02/10 15:02:40 Successfully connected to Kafka from Kafka listener service
-2024/02/10 15:02:41 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
+2024/02/11 17:29:43 -------------------------------------------------------
+2024/02/11 17:29:43 Kafka listener is Starting...
+2024/02/11 17:29:43 -------------------------------------------------------
+2024/02/11 17:29:43 Successfully connected to Kafka from Kafka listener service
+2024/02/11 20:29:43 -------------------------------------------------------
+2024/02/11 20:29:43 база данных существует
+2024/02/11 20:29:43 таблица существует
+2024/02/11 20:29:43 connected to 192.168.16.3:2181
+2024/02/11 20:29:43 authenticated: id=72060077277184002, timeout=10000
+2024/02/11 20:29:43 re-submitting `0` credentials after reconnect
+2024/02/11 20:29:43 recv loop terminated: EOF
+2024/02/11 20:29:43 send loop terminated: <nil>
+2024/02/11 20:29:43 Zookeeper is working correctly
+2024/02/11 20:29:43 Kafka is working correctly
+2024/02/11 20:29:43 Message 'Hello' sent to topic 'my-topic'
+2024/02/11 20:29:43 Message 'from' sent to topic 'my-topic'
+2024/02/11 20:29:43 Message 'Kafka' sent to topic 'my-topic'
+2024/02/11 17:29:44 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
 
