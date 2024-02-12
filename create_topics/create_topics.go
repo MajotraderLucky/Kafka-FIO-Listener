@@ -5,10 +5,25 @@ import (
 	"log"
 	"time"
 
+	"github.com/MajotraderLucky/Utils/logger"
 	"github.com/segmentio/kafka-go"
 )
 
 func main() {
+	logger := logger.Logger{}
+	err := logger.CreateLogsDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = logger.OpenLogFile()
+	if err != nil {
+		log.Fatal(err)
+	}
+	logger.SetLogger()
+	logger.LogLine()
+	log.Println("Create_topics is starting...")
+	logger.LogLine()
+
 	// Kafka broker
 	brokerAddress := "kafka:9092"
 
@@ -39,4 +54,5 @@ func main() {
 		log.Fatalf("failed to create topics: %v", err)
 	}
 	log.Println("Topics created successfully")
+	logger.LogLine()
 }

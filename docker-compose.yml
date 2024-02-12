@@ -37,6 +37,7 @@ services:
     build: ./kafka_listener
     environment:
       KAFKA_HOST: kafka
+      TZ: Europe/Moscow
     depends_on:
       - kafka
       - db
@@ -45,6 +46,7 @@ services:
       - ./logs:/app/logs
     networks:
       - mynetwork
+      
 
   create-topics:
     build:
@@ -52,8 +54,13 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - kafka
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
     networks:
       - mynetwork
+    environment:
+      TZ: Europe/Moscow
 
   mainapp:
     build: .

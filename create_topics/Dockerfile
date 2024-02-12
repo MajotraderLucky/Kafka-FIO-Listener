@@ -1,23 +1,26 @@
-# Используйте официальный образ Go как базовый
-FROM golang:1.21 as builder
+# Use official golang image as a parent image
+FROM golang:1.21
 
-# Установите рабочий каталог
+# Set the Current Working Directory inside the container
 WORKDIR /app
 
-# Копируйте исходный код в контейнер
+# Copy go mod and sum files
+COPY go.mod go.sum ./
+
+# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed 
+RUN go mod download 
+
+RUN apt-get update && apt-get install -y build-essential git librdkafka-dev
+
+# Copy the source from the current directory to the Working Directory inside the container 
 COPY . .
 
-# Скачивайте зависимости
-RUN go mod download
+# Build the Go app
+RUN go build -o create_topics .
 
-# Собирайте приложение
-RUN CGO_ENABLED=0 GOOS=linux go build -o create_topics create_topics.go
+# This container exposes port 8080 to the outside world
+EXPOSE 8085
 
-# Используйте scratch для минимального образа
-FROM scratch
-
-# Копируйте скомпилированный бинарный файл из предыдущего шага
-COPY --from=builder /app/create_topics .
-
-# Запускайте программу
-ENTRYPOINT ["./create_topics"]
+# Run the binary program produced by go install
+#CMD ["./kafka_listener"]
+CMD sh -c "go run create_topics/create_topics.go"
