@@ -45,7 +45,13 @@ func main() {
 			NumPartitions:     1,
 			ReplicationFactor: 1,
 		},
-		// Add more topics here
+		// Adding a new topic here
+		{
+			Topic:             "my-topic",
+			NumPartitions:     1,
+			ReplicationFactor: 1,
+		},
+		// More topics can be added if needed
 	}
 
 	// Create topics
