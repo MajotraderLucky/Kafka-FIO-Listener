@@ -76,5 +76,17 @@ services:
     environment:
       TZ: Europe/Moscow
 
+  api2kafka:
+    build: ./api2kafka
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    depends_on:
+      - mainapp
+    networks:
+      - mynetwork
+    environment:
+      TZ: Europe/Moscow
+
 networks:
   mynetwork: {}

@@ -1,50 +1,50 @@
-2024/02/13 18:48:59 Message 'from' sent to topic 'my-topic'
-2024/02/13 18:48:59 Message 'Kafka' sent to topic 'my-topic'
-2024/02/13 18:49:01 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
 
-2024/02/13 18:50:09 -------------------------------------------------------
-2024/02/13 18:50:09 Create_topics is starting...
-2024/02/13 18:50:09 -------------------------------------------------------
-2024/02/13 18:50:09 failed to dial Kafka broker: failed to dial: failed to open connection to kafka:9092: dial tcp 172.24.0.4:9092: connect: connection refused
-2024/02/13 18:50:13 -------------------------------------------------------
-2024/02/13 18:50:13 Kafka listener is Starting...
-2024/02/13 18:50:13 -------------------------------------------------------
-2024/02/13 18:50:13 Successfully connected to Kafka from Kafka listener service
-2024/02/13 18:50:14 -------------------------------------------------------
-2024/02/13 18:50:14 база данных существует
-2024/02/13 18:50:14 таблица существует
-2024/02/13 18:50:14 connected to 172.24.0.3:2181
-2024/02/13 18:50:14 authenticated: id=72058036272037890, timeout=10000
-2024/02/13 18:50:14 re-submitting `0` credentials after reconnect
-2024/02/13 18:50:14 recv loop terminated: EOF
-2024/02/13 18:50:14 Zookeeper is working correctly
-2024/02/13 18:50:14 send loop terminated: <nil>
-2024/02/13 18:50:14 Kafka is working correctly
-2024/02/13 18:50:14 Message 'Hello' sent to topic 'my-topic'
-2024/02/13 18:50:14 Message 'from' sent to topic 'my-topic'
-2024/02/13 18:50:14 Message 'Kafka' sent to topic 'my-topic'
-2024/02/13 18:50:14 Error when reading a message: Subscribed topic not available: my-topic: Broker: Unknown topic or partition
+2024/02/27 00:44:28 -------------------------------------------------------
+2024/02/27 00:44:28 Kafka listener is Starting...
+2024/02/27 00:44:28 -------------------------------------------------------
+2024/02/27 00:44:28 Successfully connected to Kafka from Kafka listener service
+2024/02/27 00:44:28 -------------------------------------------------------
+2024/02/27 00:44:28 база данных существует
+2024/02/27 00:44:28 таблица существует
+2024/02/27 00:44:28 connected to 172.18.0.3:2181
+2024/02/27 00:44:28 authenticated: id=72057810781863938, timeout=10000
+2024/02/27 00:44:28 re-submitting `0` credentials after reconnect
+2024/02/27 00:44:28 recv loop terminated: EOF
+2024/02/27 00:44:28 send loop terminated: <nil>
+2024/02/27 00:44:28 Zookeeper is working correctly
+2024/02/27 00:44:28 Kafka is working correctly
+2024/02/27 00:44:28 Message 'Hello' sent to topic 'my-topic'
+2024/02/27 00:44:28 Message 'from' sent to topic 'my-topic'
+2024/02/27 00:44:28 Message 'Kafka' sent to topic 'my-topic'
+2024/02/27 00:44:28 -------------------------------------------------------
+2024/02/27 00:44:28 Create_topics is starting...
+2024/02/27 00:44:28 -------------------------------------------------------
+2024/02/27 00:44:29 Topics created successfully
+2024/02/27 00:44:29 -------------------------------------------------------
 
-2024/02/13 18:53:15 -------------------------------------------------------
-2024/02/13 18:53:15 Create_topics is starting...
-2024/02/13 18:53:15 -------------------------------------------------------
-2024/02/13 18:53:16 Topics created successfully
-2024/02/13 18:53:16 -------------------------------------------------------
-2024/02/13 18:53:19 -------------------------------------------------------
-2024/02/13 18:53:19 Kafka listener is Starting...
-2024/02/13 18:53:19 -------------------------------------------------------
-2024/02/13 18:53:19 Successfully connected to Kafka from Kafka listener service
-2024/02/13 18:53:20 -------------------------------------------------------
-2024/02/13 18:53:20 база данных существует
-2024/02/13 18:53:20 таблица существует
-2024/02/13 18:53:20 connected to 172.25.0.3:2181
-2024/02/13 18:53:20 authenticated: id=72058048404520962, timeout=10000
-2024/02/13 18:53:20 re-submitting `0` credentials after reconnect
-2024/02/13 18:53:20 recv loop terminated: EOF
-2024/02/13 18:53:20 send loop terminated: <nil>
-2024/02/13 18:53:20 Zookeeper is working correctly
-2024/02/13 18:53:20 Kafka is working correctly
-2024/02/13 18:53:20 Message 'Hello' sent to topic 'my-topic'
-2024/02/13 18:53:20 Message 'from' sent to topic 'my-topic'
-2024/02/13 18:53:20 Message 'Kafka' sent to topic 'my-topic'
+2024/02/27 01:57:44 -------------------------------------------------------
+2024/02/27 01:57:44 API2Kafka is starting...
+2024/02/27 01:57:44 -------------------------------------------------------
+2024/02/27 01:57:53 -------------------------------------------------------
+2024/02/27 01:57:53 Create_topics is starting...
+2024/02/27 01:57:53 -------------------------------------------------------
+2024/02/27 01:57:53 Topics created successfully
+2024/02/27 01:57:53 -------------------------------------------------------
+2024/02/27 01:57:54 -------------------------------------------------------
+2024/02/27 01:57:54 Kafka listener is Starting...
+2024/02/27 01:57:54 -------------------------------------------------------
+2024/02/27 01:57:54 Successfully connected to Kafka from Kafka listener service
+2024/02/27 01:57:54 -------------------------------------------------------
+2024/02/27 01:57:54 база данных существует
+2024/02/27 01:57:54 таблица существует
+2024/02/27 01:57:54 connected to 172.18.0.3:2181
+2024/02/27 01:57:54 authenticated: id=72057969214685186, timeout=10000
+2024/02/27 01:57:54 re-submitting `0` credentials after reconnect
+2024/02/27 01:57:54 recv loop terminated: EOF
+2024/02/27 01:57:54 send loop terminated: <nil>
+2024/02/27 01:57:54 Zookeeper is working correctly
+2024/02/27 01:57:54 Kafka is working correctly
+2024/02/27 01:57:54 Message 'Hello' sent to topic 'my-topic'
+2024/02/27 01:57:54 Message 'from' sent to topic 'my-topic'
+2024/02/27 01:57:54 Message 'Kafka' sent to topic 'my-topic'
 
