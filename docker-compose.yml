@@ -83,6 +83,9 @@ services:
       - ./logs:/app/logs
     depends_on:
       - mainapp
+      - kafka
+      - db
+      - create-topics
     networks:
       - mynetwork
     environment:
