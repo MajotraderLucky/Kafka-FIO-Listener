@@ -71,6 +71,7 @@ services:
       - kafka
       - db
       - create-topics
+      - api2kafka
     networks:
       - mynetwork
     environment:
@@ -82,7 +83,6 @@ services:
       - .:/app
       - ./logs:/app/logs
     depends_on:
-      - mainapp
       - kafka
       - db
       - create-topics
