@@ -1,8 +1,6 @@
 package apiconfig
 
 import (
-	"log"
-
 	"github.com/segmentio/kafka-go"
 )
 
@@ -30,8 +28,4 @@ func GetKafkaTopics() ([]string, error) {
 	}
 
 	return topics, nil
-}
-
-func Hello() {
-	log.Println("Hello, apiconfig!")
 }
