@@ -1,74 +1,60 @@
 package main
 
 import (
-	"encoding/json"
-	"io"
 	"log"
 	"net/http"
 
-	"github.com/MajotraderLucky/Utils/logger"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/segmentio/kafka-go"
 )
 
-// Structure to store the response from the API
-type ApiResponse struct {
-	Data string `json:"data"`
-}
-
-func fetchDataFromAPI(url string) (string, error) {
-	// Send GET request
-	resp, err := http.Get(url)
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-	// Read response body
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", err
-	}
-	// Parse JSON
-	var apiResponse ApiResponse
-	err = json.Unmarshal(body, &apiResponse)
-	if err != nil {
-		return "", err
-	}
-	return apiResponse.Data, nil
+// KafkaInfo is a structure for storing information about Kafka topics
+type KafkaInfo struct {
+	Topics []string `json:"topics"`
 }
 
 func main() {
-	logger := logger.Logger{}
-	err := logger.CreateLogsDir()
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = logger.OpenLogFile()
-	if err != nil {
-		log.Fatal(err)
-	}
-	logger.SetLogger()
-	logger.LogLine()
-	log.Println("API2Kafka is starting...")
-	logger.LogLine()
-
 	app := fiber.New()
 
-	app.Get("/data", func(c *fiber.Ctx) error {
-		// URL of the open API
-		url := "http://127.0.0.1:8086/data"
-
-		data, err := fetchDataFromAPI(url)
+	// Endpoint for fetching the list of topics
+	app.Get("/kafka/topics", func(c *fiber.Ctx) error {
+		topics, err := getKafkaTopics()
 		if err != nil {
-			log.Println(err)
-			return c.Status(500).SendString("Internal server error")
+			log.Println("Failed to get Kafka topics:", err)
+			return c.Status(http.StatusInternalServerError).SendString("Failed to get Kafka topics")
 		}
-		// Display the result
-		return c.SendString(data)
+
+		return c.JSON(KafkaInfo{Topics: topics})
 	})
-	// Start server
-	err = app.Listen(":3000")
+
+	err := app.Listen(":8086")
 	if err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
+}
+
+// getKafkaTopics returns a list of topics from Kafka
+func getKafkaTopics() ([]string, error) {
+	conn, err := kafka.Dial("tcp", "kafka:9092") // Adjust according to your Kafka setup
+	if err != nil {
+		return nil, err
+	}
+	defer conn.Close()
+
+	partitions, err := conn.ReadPartitions()
+	if err != nil {
+		return nil, err
+	}
+
+	topicMap := make(map[string]struct{})
+	for _, p := range partitions {
+		topicMap[p.Topic] = struct{}{}
+	}
+
+	var topics []string
+	for topic := range topicMap {
+		topics = append(topics, topic)
+	}
+
+	return topics, nil
 }

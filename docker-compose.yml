@@ -80,7 +80,7 @@ services:
   api2kafka:
     build: ./api2kafka
     ports:
-      - "3000:3000"
+      - "8086:8086"
     volumes:
       - .:/app
       - ./logs:/app/logs
