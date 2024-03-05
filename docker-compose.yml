@@ -79,13 +79,14 @@ services:
 
   api2kafka:
     build: ./api2kafka
+    ports:
+      - "3000:3000"
     volumes:
       - .:/app
       - ./logs:/app/logs
     depends_on:
       - kafka
       - db
-      - create-topics
     networks:
       - mynetwork
     environment:

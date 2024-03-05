@@ -54,7 +54,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Get("data", func(c *fiber.Ctx) error {
+	app.Get("/data", func(c *fiber.Ctx) error {
 		// URL of the open API
 		url := "http://127.0.0.1:8086/data"
 
@@ -67,5 +67,8 @@ func main() {
 		return c.SendString(data)
 	})
 	// Start server
-	app.Listen(":3000")
+	err = app.Listen(":3000")
+	if err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 }

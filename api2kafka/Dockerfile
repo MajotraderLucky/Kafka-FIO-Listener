@@ -17,7 +17,7 @@ COPY . .
 RUN go build -o api2kafka .
 
 # This container exposes port 8080 to the outside world
-EXPOSE 8086
+EXPOSE 3000
 
 # Run the binary program produced by go install
 #CMD ["./kafka_listener"]
