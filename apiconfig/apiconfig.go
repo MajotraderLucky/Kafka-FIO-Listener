@@ -1,6 +1,10 @@
 package apiconfig
 
 import (
+	"strings"
+
+	"github.com/gofiber/fiber"
+	"github.com/golang-jwt/jwt"
 	"github.com/segmentio/kafka-go"
 )
 
@@ -28,4 +32,36 @@ func GetKafkaTopics() ([]string, error) {
 	}
 
 	return topics, nil
+}
+
+var jwtKey = []byte("swg3s+hZkEz/Vh7fXtJRCgRAJBzT2ttyHcIgwD14b3k=")
+
+func IsAuthorized(c *fiber.Ctx) error {
+	authHeader := c.Get("Authorization")
+	if authHeader == "" {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"error": "Unauthorized",
+		})
+	}
+
+	tokenString := strings.TrimSpace(strings.TrimPrefix(authHeader, "Bearer "))
+
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (any, error) {
+		return jwtKey, nil
+	})
+
+	if err != nil {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	if !token.Valid {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"error": "Invalid token",
+		})
+	}
+
+	c.Next()   // call Next and don't return its value
+	return nil // return nil since we don't have any errors to report
 }
