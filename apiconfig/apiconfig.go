@@ -36,7 +36,7 @@ func GetKafkaTopics() ([]string, error) {
 
 var jwtKey = []byte("swg3s+hZkEz/Vh7fXtJRCgRAJBzT2ttyHcIgwD14b3k=")
 
-func IsAuthorized(c *fiber.Ctx) error {
+func IsAuthorizedJwt(c *fiber.Ctx) error {
 	authHeader := c.Get("Authorization")
 	if authHeader == "" {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
