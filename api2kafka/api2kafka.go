@@ -25,7 +25,7 @@ var jwtKey = []byte("swg3s+hZkEz/Vh7fXtJRCgRAJBzT2ttyHcIgwD14b3k=")
 func main() {
 	app := fiber.New()
 
-	// Защищаем эндпоинт с помощью мидлвари IsAuthorized
+	// Protecting the endpoint with the help of the isAuthorized middleware
 	app.Get("/kafka/topics", IsAuthorized, func(c *fiber.Ctx) error {
 		topics, err := apiconfig.GetKafkaTopics()
 		if err != nil {

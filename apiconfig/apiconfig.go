@@ -62,6 +62,5 @@ func IsAuthorizedJwt(c *fiber.Ctx) error {
 		})
 	}
 
-	c.Next()   // call Next and don't return its value
-	return nil // return nil since we don't have any errors to report
+	return c.Next() // call Next and don't return its value
 }
