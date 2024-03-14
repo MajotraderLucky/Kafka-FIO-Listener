@@ -1,1 +1,5 @@
-curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV4YW1wbGVVc2VyIiwiZXhwIjoxNzEwMjM2MTQzfQ.Vi3yOUFqv7vYD_MXCI-XDApBrELiiDMsspcWFInm0OE" http://127.0.0.1:8086/kafka/topics
+curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV4YW1wbGVVc2VyIiwiZXhwIjoxNzEwNDY2OTI0fQ.TBZpGs8W0Ndz3u8wRx7Tq77IebQ-SQLkF5cqfRHLDxU" http://127.0.0.1:8086/kafka/topics
+
+
+
+curl -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImV4YW1wbGVVc2VyIiwiZXhwIjoxNzEwNDY2OTI0fQ.TBZpGs8W0Ndz3u8wRx7Tq77IebQ-SQLkF5cqfRHLDxU" http://127.0.0.1:8086/kafka/topics/messages
